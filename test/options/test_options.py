@@ -10,5 +10,5 @@ class TestOptions(BaseOptions):
         # Add an additional argument for the third checkpoint
         self.parser.add_argument('--additional_checkpoint', type=str, default='./u2netp.pth.1', help='load the pretrained model from the specified location')
 
-
+        # Set isTrain to False
         self.isTrain = False
