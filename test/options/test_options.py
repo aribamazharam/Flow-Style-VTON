@@ -4,8 +4,11 @@ class TestOptions(BaseOptions):
     def initialize(self):
         BaseOptions.initialize(self)
 
-        self.parser.add_argument('--warp_checkpoint', type=str, default='/home/ariba/Music/flow_style_vton_ckp/ckp/non_aug/PFAFN_warp_epoch_101.pth', help='load the pretrained model from the specified location')
-        self.parser.add_argument('--gen_checkpoint', type=str, default='/home/ariba/Music/flow_style_vton_ckp/ckp/non_aug/PFAFN_gen_epoch_101.pth', help='load the pretrained model from the specified location')
-        self.parser.add_argument('--phase', type=str, default='test', help='train, val, test, etc')
+        # Update the paths for warp_checkpoint and gen_checkpoint arguments
+        self.parser.add_argument('--warp_checkpoint', type=str, default='./lip_final.pth', help='load the pretrained model from the specified location')
+        self.parser.add_argument('--gen_checkpoint', type=str, default='./u2netp.pth', help='load the pretrained model from the specified location')
+        # Add an additional argument for the third checkpoint
+        self.parser.add_argument('--additional_checkpoint', type=str, default='./u2netp.pth.1', help='load the pretrained model from the specified location')
+
 
         self.isTrain = False
